@@ -1,0 +1,25 @@
+{
+  "name": "fantasticBox",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Matt Paul <mattpaul001@icloud.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-resource": "~1.4.8",
+    "angular-material": "~0.11.4",
+    "angular-mocks": "~1.4.8",
+    "angular-route": "~1.4.8"
+  }
+}
