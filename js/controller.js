@@ -2,8 +2,8 @@ app.controller('Controller', ['calculateFactory', function(calculateFactory) {
 
   var self = this;
 
-  this.calculateArea = function(width, length, height) {
-    return width * length * height;
+  this.calculateArea = function(width, length, height, quantity) {
+    return width * length * height * quantity;
   };
 
   this.cardboardGradeCalc = function(grade, area) {
@@ -16,8 +16,21 @@ app.controller('Controller', ['calculateFactory', function(calculateFactory) {
         if (area > 2) throw new Error("Grade C box must be below 2m squared");
         return 0.05 * area;
     }
-    
-    // return grade * area;
+  };
+
+  this.printQuality = function(print, area) {
+    switch (print) {
+      case '3C':
+        return 0.20 * area;
+      case '2C':
+        return 0.10 * area;
+      case 'BL':
+        return 0.05 * area;
+      case 'NO':
+        return 0;
+      case 'FB':
+        return "Discount = true";
+    }
   };
 
 }]);
