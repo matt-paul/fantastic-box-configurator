@@ -1,8 +1,8 @@
 describe('Controller', function() {
-  beforeEach(module('FantasticBoxOrder', ['ngRoute']));
+  // beforeEach(module('FantasticBoxOrder', ['ngRoute']));
+  beforeEach(module('FantasticBoxOrder'));
 
   var ctrl;
-  // var a;
 
   beforeEach(inject(function($controller) {
     ctrl = $controller('Controller');
@@ -31,6 +31,7 @@ describe('Controller', function() {
     });
 
   });
+// }));
 
   describe('print quality', function() {
 
@@ -50,10 +51,10 @@ describe('Controller', function() {
       expect(ctrl.printQuality('NO', 2)).toEqual(0);
     });
 
-    // it('applies discount to total if fantastic box branding is used', function () {
-    //   ctrl.printQuality('FB', 2);
-    //   expect(ctrl.discount).toBeTrue;
-    // });
+    it('applies discount to total if fantastic box branding is used', function () {
+      ctrl.printQuality('FB', 2);
+      expect(ctrl.discount).toBeTrue;
+    });
 
   });
 });

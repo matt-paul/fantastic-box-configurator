@@ -1,4 +1,4 @@
-app.controller('Controller', ['calculateFactory', 'ngRoute', function(calculateFactory, ngRoute) {
+app.controller('Controller', ['calculateFactory', function() {
 
   var self = this;
 
