@@ -1,9 +1,11 @@
-app.controller('Controller', ['calculateFactory', function(calculateFactory) {
+app.controller('Controller', ['calculateFactory', 'ngRoute', function(calculateFactory, ngRoute) {
 
   var self = this;
 
-  this.calculateArea = function(width, length, height, quantity) {
-    return width * length * height * quantity;
+  this.calculateArea = function(width, height, length, quantity) {
+    var area = width * height * length * quantity;
+    console.log(area);
+    return area;
   };
 
   this.cardboardGradeCalc = function(grade, area) {

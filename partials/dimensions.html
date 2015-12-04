@@ -4,30 +4,39 @@
           <p class="intro">
             Enter the width, height, length and quantity of the box(es) you require.
           </p>
-
+<form name="dimensionsForm">
           <div class="form-row">
             <label for="width">Width:</label>
-            <input type="number" ng-model="width" name="width" id="width" value="0" min="0" step="0.01">
+            <input type="number" ng-model="ctrl.width" name="width" id="width"
+            value="0" min="0" step="0.01" required>
           </div>
 
           <div class="form-row">
             <label for="height">Height:</label>
-            <input type="number" ng-model="height" name="height" id="height" value="0" min="0" step="0.01">
+            <input type="number" ng-model="ctrl.height" name="height"
+                                                        id="height" value="0"
+                                                        min="0" step="0.01"
+                                                                required>
           </div>
 
           <div class="form-row">
             <label for="length">Length:</label>
-            <input type="number" ng-model="length" name="length" id="length" value="0" min="0" step="0.01">
+            <input type="number" ng-model="ctrl.length" name="length"
+            id="length" value="0" min="0" step="0.01" required>
           </div>
 
           <div class="form-row">
             <label for="quantity">Quantity:</label>
-            <input type="number" ng-model="quantity" name="quantity" id="quantity" value="0" min="0" step="1">
+            <input type="number" ng-model="ctrl.quantity" name="quantity"
+            id="quantity" value="0" min="0" step="1" required>
           </div>
 
           <div class="form-actions">
-            <button type="button" class="btn btn-primary btn-next" disabled>
+            <button type="button" ng-click="ctrl.calculateArea(ctrl.width,
+              ctrl.height, ctrl.length, ctrl.quantity)"class="btn btn-primary
+              btn-next" ng-disabled="dimensionsForm.$invalid">
               Next
             </buttton>
           </div>
+</form>
         </div>

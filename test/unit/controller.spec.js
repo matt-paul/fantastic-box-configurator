@@ -1,5 +1,5 @@
 describe('Controller', function() {
-  beforeEach(module('FantasticBoxOrder'));
+  beforeEach(module('FantasticBoxOrder', ['ngRoute']));
 
   var ctrl;
   // var a;
@@ -50,9 +50,10 @@ describe('Controller', function() {
       expect(ctrl.printQuality('NO', 2)).toEqual(0);
     });
 
-    it('applies discount to total if fantastic box branding is used', function () {
-      ctrl.printQuality('FB', 2);
-      expect(ctrl.discount).toBeTrue;
-    });
+    // it('applies discount to total if fantastic box branding is used', function () {
+    //   ctrl.printQuality('FB', 2);
+    //   expect(ctrl.discount).toBeTrue;
+    // });
+
   });
 });

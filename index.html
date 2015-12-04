@@ -11,6 +11,13 @@
   <link href='https://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet">
   <link rel="shortcut icon" href="favicon.ico">
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script type="text/javascript"src="js/app.js"></script>
+  <script src="js/controller.js"></script>
+
 </head>
 <body ng-controller="Controller as ctrl">
 
@@ -39,14 +46,14 @@
             </a>
           </li>
           <li>
-            <a href="#/step-2" class="step step-2">
+            <a href="#/step-2" class="step step-2 is-active">
               <div class="step-number">2</div>
               <h3 class="step-heading">Cardboard Grade</h3>
               <span class="step-value">-</span>
             </a>
           </li>
           <li>
-            <a href="#step-3" class="step step-3">
+            <a href="#step-3" class="step step-3 is-active">
               <div class="step-number">3</div>
               <h3 class="step-heading">Print Quality</h3>
               <span class="step-value">-</span>
@@ -70,20 +77,19 @@
 
       <section>
 
-        <ng-view></ng-view>
+        <div ng-view></div>
 
 
       </section>
     </div>
   </main>
 
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <!-- <script src="bower_components/angular/angular.js"></script> -->
+  <!-- <script src="bower_components/angular-route/angular-route.js"></script> -->
+  <!-- <script src="bower_components/angular-resource/angular-resource.js"></script> -->
   <!-- <script type="text/javascript" src="/js/app.js"></script> -->
-  <script src="js/app.js"></script>
-  <script src="js/controller.js"></script>
-  <script src="js/calculateFactory.js"></script>
+  <!-- <script type="text/javascript"src="js/app.js"></script> -->
+  <!-- <script src="js/controller.js"></script> -->
   <script src="text/ng-template" id="partials/dimensions.html"></script>
   <script src="text/ng-template" id="partials/cardboardGrade.html"></script>
   <script src="text/ng-template" id="partials/printQuality.html"></script>
