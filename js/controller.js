@@ -7,9 +7,21 @@ app.controller('Controller', ['calculateFactory', function() {
   this.length = 0.0;
   this.quantity = 0.0;
 
+  this.discount = false;
+
+  this.totalCost = 0.0;
+
+  var total = {
+    dim: 0,
+    card: 0,
+    print: 0,
+    extras: 0,
+  };
+
   this.calculateArea = function(width, height, length, quantity) {
     var area = width * height * length * quantity;
-    console.log(area);
+    total.dim = area;
+    console.log(total);
     return area;
   };
 

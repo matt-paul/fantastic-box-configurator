@@ -8,6 +8,10 @@ describe('Controller', function() {
     ctrl = $controller('Controller');
   }));
 
+  it('does not apply a discount initially', function() {
+    expect(ctrl.discount).toBe(false);
+  });
+
   it('calculates the area of a box', function() {
     expect(ctrl.calculateArea(2,2,2,1)).toEqual(8);
   });
@@ -31,7 +35,6 @@ describe('Controller', function() {
     });
 
   });
-// }));
 
   describe('print quality', function() {
 
@@ -57,4 +60,12 @@ describe('Controller', function() {
     });
 
   });
+
+  // describe('total cost calculation', function() {
+  //   ctrl.calculateArea(2,2,3,4);
+  //   ctrl.cardboardGradeCalc('A',15);
+  //   ctrl.printQuality('2C', 15);
+  //   expect(ctrl.total).toEqual(30);
+  // });
+
 });
