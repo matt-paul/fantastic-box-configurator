@@ -2,6 +2,11 @@ app.controller('Controller', ['calculateFactory', function() {
 
   var self = this;
 
+  this.width = 0.0;
+  this.height = 0.0;
+  this.length = 0.0;
+  this.quantity = 0.0;
+
   this.calculateArea = function(width, height, length, quantity) {
     var area = width * height * length * quantity;
     console.log(area);

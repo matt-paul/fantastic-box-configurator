@@ -3,5 +3,5 @@ app.factory('calculateFactory', function() {
     area: function(width, height, length) {
       return width * length * height;
     }
-  }
+  };
 });
