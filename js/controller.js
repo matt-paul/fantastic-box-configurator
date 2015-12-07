@@ -2,14 +2,13 @@ app.controller('Controller', ['calculateFactory', function() {
 
   var self = this;
 
-  this.width = 0.0;
-  this.height = 0.0;
-  this.length = 0.0;
-  this.quantity = 0.0;
+  self.width = 0.0;
+  self.height = 0.0;
+  self.length = 0.0;
+  self.quantity = 0.0;
+  self.discount = false;
 
-  this.discount = false;
-
-  this.totalCost = 0.0;
+  self.totalCost = 0.0;
 
   var total = {
     dim: 0,
@@ -18,26 +17,30 @@ app.controller('Controller', ['calculateFactory', function() {
     extras: 0,
   };
 
-  this.calculateArea = function(width, height, length, quantity) {
+  self.calculateArea = function(width, height, length, quantity) {
     var area = width * height * length * quantity;
     total.dim = area;
-    console.log(total);
     return area;
   };
 
-  this.cardboardGradeCalc = function(grade, area) {
+  self.cardboardGradeCalc = function(grade, area) {
     switch (grade) {
       case 'A':
-        return 0.20 * area;
+        grade = 0.20;
+        break;
       case 'B':
-        return 0.10 * area;
+        grade = 0.10;
+        break;
       case 'C':
         if (area > 2) throw new Error("Grade C box must be below 2m squared");
-        return 0.05 * area;
+        grade = 0.05;
     }
+    var cardCost =  grade * area;
+    total.card = cardCost;
+    return cardCost;
   };
 
-  this.printQuality = function(print, area) {
+  self.printQuality = function(print, area) {
     switch (print) {
       case '3C':
         return 0.20 * area;
